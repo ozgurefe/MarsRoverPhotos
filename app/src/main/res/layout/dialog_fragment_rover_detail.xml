@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="photo"
+            type="com.example.mars.data.model.Photo" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:id="@+id/imageViewPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            setImageUrlWithRadius="@{photo.img_src}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHeight_percent="0.5"
+            android:layout_marginTop="11dp"
+            android:layout_marginRight="11dp"
+            android:layout_marginLeft="11dp"
+            />
+
+        <TextView
+            android:id="@+id/textViewPhotoDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{photo.earth_date}"
+            tools:text="Fotoğraf tarihi"
+            android:background="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewPhoto"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="11dp"
+            />
+
+        <TextView
+            android:id="@+id/textViewRoverName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{photo.rover.name}"
+            tools:text="RoverName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPhotoDate"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="11dp"
+            />
+        <TextView
+            android:id="@+id/textViewCameraName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{photo.camera.name}"
+            tools:text="CameraName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewRoverName"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="11dp"
+            />
+
+        <TextView
+            android:id="@+id/textViewRoverStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{photo.rover.status}"
+            tools:text="RoverStatus"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCameraName"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="11dp"
+            />
+
+        <TextView
+            android:id="@+id/textViewLaunchDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{photo.rover.launch_date}"
+            tools:text="LaunchDate"
+            app:layout_constraintTop_toBottomOf="@+id/textViewRoverStatus"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="11dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{photo.rover.landing_date}"
+            tools:text="Landing Date"
+            app:layout_constraintTop_toBottomOf="@+id/textViewLaunchDate"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="11dp"
+            />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
